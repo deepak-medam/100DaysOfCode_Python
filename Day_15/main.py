@@ -33,7 +33,11 @@ resources = {
 
 
 def check_resources(coffee):
-    """Returns True when order can be made, False if ingredients are insufficient."""
+    """Returns True when order can be made, False if ingredients are insufficient.
+
+    :param coffee: 
+
+    """
     req_resc = coffee["ingredients"]
     for item in req_resc:
         if req_resc[item] >= resources[item]:
@@ -43,7 +47,7 @@ def check_resources(coffee):
 
 
 def process_coins():
-    """Return the total calculated from all the coins inserted."""
+    """ """
     print("Please insert coins.")
     quarters = int(input("How many quarters?: ")) * 0.25
     dimes = int(input("How many dimes?: ")) * 0.10
@@ -54,7 +58,12 @@ def process_coins():
 
 
 def check_transaction(coffee_price, payment_recieved):
-    """Return True when the payment is accepted and False if money is insufficient."""
+    """
+
+    :param coffee_price: 
+    :param payment_recieved: 
+
+    """
     if payment_recieved >= coffee_price:
         change = round(payment_recieved - coffee_price, 2)
         print(f"here is ${change} in change.")
@@ -67,13 +76,19 @@ def check_transaction(coffee_price, payment_recieved):
 
 
 def make_coffee(drink_name, order_ingredients):
-    """Deduct the required ingredients from the resources."""
+    """Deduct the required ingredients from the resources.
+
+    :param drink_name: 
+    :param order_ingredients: 
+
+    """
     for item in order_ingredients:
         resources[item] -= order_ingredients[item]
     print(f"Here is your {drink_name} ☕ Enjoy!")
 
 
 def coffee_machine():
+    """ """
     is_on = True
     while is_on:
         user_order = input("What would you like? (espresso/latte/cappuccino): ")
