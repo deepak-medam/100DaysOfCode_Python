@@ -21,7 +21,7 @@ MENU = {
             "coffee": 24,
         },
         "cost": 3.0,
-    }
+    },
 }
 
 profit = 0
@@ -43,7 +43,7 @@ def check_resources(coffee):
 
 
 def process_coins():
-    """ Return the total calculated from all the coins inserted."""
+    """Return the total calculated from all the coins inserted."""
     print("Please insert coins.")
     quarters = int(input("How many quarters?: ")) * 0.25
     dimes = int(input("How many dimes?: ")) * 0.10
@@ -76,8 +76,7 @@ def make_coffee(drink_name, order_ingredients):
 def coffee_machine():
     is_on = True
     while is_on:
-        user_order = input(
-            "What would you like? (espresso/latte/cappuccino): ")
+        user_order = input("What would you like? (espresso/latte/cappuccino): ")
         if user_order == "off":
             is_on = False
         elif user_order == "report":
@@ -88,8 +87,8 @@ def coffee_machine():
             drink = MENU[user_order]
             if check_resources(drink):
                 payment = process_coins()
-                if check_transaction(drink['cost'], payment):
-                    make_coffee(user_order, drink['ingredients'])
+                if check_transaction(drink["cost"], payment):
+                    make_coffee(user_order, drink["ingredients"])
 
 
 coffee_machine()
