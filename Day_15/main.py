@@ -76,14 +76,15 @@ def make_coffee(drink_name, order_ingredients):
 def coffee_machine():
     is_on = True
     while is_on:
-        user_order = input("What would you like? (espresso/latte/cappuccino): ")
+        user_order = input(
+            "What would you like? (espresso/latte/cappuccino): ")
         if user_order == "off":
             is_on = False
         elif user_order == "report":
             for k, v in resources.items():
                 print(f"{k}: {v}")
             print(f"Money : ${profit}")
-        else :
+        else:
             drink = MENU[user_order]
             if check_resources(drink):
                 payment = process_coins()
