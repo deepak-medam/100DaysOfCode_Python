@@ -35,7 +35,7 @@ resources = {
 def check_resources(coffee):
     """Returns True when order can be made, False if ingredients are insufficient.
 
-    :param coffee: 
+    :param coffee:
 
     """
     req_resc = coffee["ingredients"]
@@ -60,8 +60,8 @@ def process_coins():
 def check_transaction(coffee_price, payment_recieved):
     """
 
-    :param coffee_price: 
-    :param payment_recieved: 
+    :param coffee_price:
+    :param payment_recieved:
 
     """
     if payment_recieved >= coffee_price:
@@ -78,8 +78,8 @@ def check_transaction(coffee_price, payment_recieved):
 def make_coffee(drink_name, order_ingredients):
     """Deduct the required ingredients from the resources.
 
-    :param drink_name: 
-    :param order_ingredients: 
+    :param drink_name:
+    :param order_ingredients:
 
     """
     for item in order_ingredients:
